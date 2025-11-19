@@ -1,0 +1,20 @@
+# Python virtual environment
+.venv/
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code settings (optional to ignore)
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Data we don't want in Git (raw, heavy, sensitive)
+data_raw/
