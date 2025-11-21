@@ -442,3 +442,44 @@ This will be updated during Phase 3 after data profiling and SQL modeling.
 ---
 
 *(Note: This dictionary will be updated after data cleaning and actual schema implementation.)*
+
+## 8. Configuration System (Overview)
+
+This project uses a structured configuration layer stored inside the `config/` folder.  
+It allows the pipeline to be flexible, portable, and easy to maintain.
+
+### 8.1 `connections.yaml`
+Defines all key folder paths and table names used by the pipeline.  
+Python scripts load this file to know:
+- where raw files are located (`data_raw/`)
+- where cleaned files will be saved (`data_clean/`)
+- the SQLite database location (`db/sales_reporting.db`)
+- the target SQL table names
+
+### 8.2 `ingestion_list.yaml`
+Lists the expected input files for every ingestion run.  
+This is used for:
+- validating missing files  
+- detecting unexpected filenames  
+- defining ingestion order  
+- supporting automated ingestion
+
+### 8.3 Mapping Files (JSON)
+Located in `config/mappings/`:
+
+- `model_map.json` → model renaming + cleaning rules  
+- `date_rules.json` → date handling logic  
+- `retailers.json` → retailer name standardisation  
+
+These files keep cleaning logic separate from Python code.
+
+### 8.4 `constants.py`
+Located in `src/utils/`.  
+Stores global configuration constants such as:
+- project version  
+- default encoding  
+- file paths to YAML/JSON configs  
+
+This allows all scripts in the pipeline to reference a single location for shared settings.
+
+
