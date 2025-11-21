@@ -1,0 +1,38 @@
+# ----------------------------
+# Pipeline Folder Configuration
+# ----------------------------
+
+paths:
+  # Base folders
+  data_raw: "data_raw"
+  data_clean: "data_clean"
+  db: "db/sales_reporting.db"
+  logs: "logs"
+
+# ----------------------------
+# Ingestion Source Paths
+# (relative to project root)
+# ----------------------------
+
+ingestion_sources:
+  dn: "data_raw/dn"               # Allocated Orders (DN Report)
+  bo: "data_raw/bo"               # Backorders
+  psi: "data_raw/psi"             # Opening Stock (PSI)
+  soh: "data_raw/soh"             # Stock on Hand
+  forecast: "data_raw/forecast"   # KAM Forecast
+  masterdata: "data_raw/masterdata"
+
+# ----------------------------
+# SQL Output Table Names
+# ----------------------------
+
+tables:
+  dim_product: "dim_product"
+  dim_customer: "dim_customer"
+  dim_date: "dim_date"
+
+  fact_dn: "fact_dn"
+  fact_bo: "fact_bo"
+  fact_psi: "fact_psi"
+  fact_soh: "fact_soh"
+  fact_forecast: "fact_forecast"

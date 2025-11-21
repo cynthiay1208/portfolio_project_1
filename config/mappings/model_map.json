@@ -1,0 +1,23 @@
+{
+  "rename_columns": {
+    "Product": "product_name",
+    "Model": "model_code",
+    "Customer": "customer_name",
+    "Qty": "quantity",
+    "Date": "transaction_date"
+  },
+
+  "model_cleaning_rules": {
+    "remove_spaces": true,
+    "uppercase": true,
+    "strip_suffixes": ["AUS", "NZ", "HS"],
+    "strip_prefixes": ["HS-", "MDL-"]
+  },
+
+  "model_mappings": {
+    "55U7KAU": "55U7K",
+    "65U7KAU": "65U7K",
+    "TV55U7K-AU": "55U7K",
+    "TV65U7K-AU": "65U7K"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "standard_retailer_names": {
+    "HN": "Harvey Norman",
+    "Harvey Norman": "Harvey Norman",
+    "HNorman": "Harvey Norman",
+
+    "GG": "The Good Guys",
+    "Good Guys": "The Good Guys",
+    "TGG": "The Good Guys",
+
+    "JB": "JB Hi-Fi",
+    "JBHIFI": "JB Hi-Fi",
+    "JB Hi Fi": "JB Hi-Fi"
+  },
+
+  "allowed_channels": [
+    "HN",
+    "GG",
+    "JB",
+    "Online",
+    "Distributor"
+  ]
+}

@@ -1,0 +1,58 @@
+# -----------------------------------------------------
+# Expected Ingestion Inventory (Template)
+# -----------------------------------------------------
+# This file lists the expected report files for each run.
+# Phase 3 ingestion scripts will read this file to:
+#   - Validate missing files
+#   - Detect unexpected filenames
+#   - Control ingestion sequence
+#   - Support automated runs
+# -----------------------------------------------------
+
+ingestion_expected:
+  dn:
+    description: "Daily DN Allocated Orders"
+    folder: "data_raw/dn"
+    required: true
+    patterns:
+      - "*DN*.xlsx"
+      - "*Allocated*.xlsx"
+
+  bo:
+    description: "Daily Backorder Report"
+    folder: "data_raw/bo"
+    required: true
+    patterns:
+      - "*BO*.xlsx"
+      - "*Backorder*.xlsx"
+
+  psi:
+    description: "PSI Opening Stock Report"
+    folder: "data_raw/psi"
+    required: false
+    patterns:
+      - "*PSI*.xlsx"
+      - "*Opening*.xlsx"
+
+  soh:
+    description: "Stock on Hand Report"
+    folder: "data_raw/soh"
+    required: true
+    patterns:
+      - "*SOH*.xlsx"
+      - "*StockOnHand*.xlsx"
+
+  forecast:
+    description: "KAM Forecast File"
+    folder: "data_raw/forecast"
+    required: false
+    patterns:
+      - "*Forecast*.xlsx"
+
+  masterdata:
+    description: "Product and Customer Master Data"
+    folder: "data_raw/masterdata"
+    required: false
+    patterns:
+      - "*ProductReference*.xlsx"
+      - "*CustomerInfo*.xlsx"
